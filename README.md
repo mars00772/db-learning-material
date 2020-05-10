@@ -1,4 +1,4 @@
-# db-learning-material
+# DataBases & Distributed Systems
 
 数据库与分布式系统学习资料总结,有缘人进来点个star,祝您一生平安靴靴 Welcome to star! 
 
@@ -12,27 +12,29 @@
   5. [Code](#Code)
  
 ### <a name='CourseMaterial'> Course Material
+  
+[CMU-15-445/645](https://15445.courses.cs.cmu.edu/fall2019/) Intro to Database Systems (Fall 2019)
 
 [CMU-15-721-英字Video](https://www.bilibili.com/video/BV1Wz411b7sD?from=search&seid=1785395184520069316)
 
-[CMU-15-721-Course-website ](https://15721.courses.cs.cmu.edu/spring2020/)
+[CMU-15-721-Course-website](https://15721.courses.cs.cmu.edu/spring2020/)  Advanced Database Systems(Spring 2020)
 
-[MIT.6.824 英字Video](https://www.bilibili.com/video/av91748150)
+[MIT.6.824 英字Video](https://www.bilibili.com/video/av91748150) Distributed Systems
 
-### <a name='Papers'> Papers
+### <a name='Papers'> Papers Reading List
 
 [rxin的数据库经典论文](https://github.com/rxin/db-readings#data-parallel)
 
 [PingCAP的数据库入门总结](https://github.com/pingcap/awesome-database-learning)
 
-
 ### <a name='OpenSource'> OpenSource Project
 
+
 ### <a name='PaperReading'> My paper reading notes
-
-[What's new with NewSQL](https://github.com/AlexanderChiuluvB/db-learning-material/tree/master/CMU-15-721/Lec-01-History-Of-Databases)
-
-这篇是15-721第一门课要求读的论文，讲述了New SQL的特性&HTAP是趋势
+  
+Title | Paper | Notes | Highlights
+-|-|-|-|-
+What's new with NewSQL||[What's new with NewSQL](https://github.com/AlexanderChiuluvB/db-learning-material/tree/master/CMU-15-721/Lec-01-History-Of-Databases)|这篇是15-721第一门课要求读的论文，讲述了New SQL的特性&HTAP是趋势
 
 [Architecture of a Database System](https://github.com/AlexanderChiuluvB/db-learning-material/blob/master/CMU-15-721/Lec-01-History-Of-Databases/DBArchitectureLearningNotes.md)
 
@@ -53,9 +55,11 @@ Andy口中世界上南波万的关于MVCC的paper..读就完事了
 
 * skipList
 
-[Simple skipList with Java](https://github.com/AlexanderChiuluvB/db-learning-material/blob/master/Data-structure/src/main/java/skipList/skipList.java)
+  [Simple skipList with Java](https://github.com/AlexanderChiuluvB/db-learning-material/blob/master/Data-structure/src/main/java/skipList/skipList.java)
 
 * Trie Tree
+
+* Radix Tree
 
 * B/B+ Tree
 
@@ -65,7 +69,7 @@ Andy口中世界上南波万的关于MVCC的paper..读就完事了
 
 * LFU
 
-* hashmap
+* Hashmap
 
 * Red-Black Tree
 
@@ -77,8 +81,8 @@ Andy口中世界上南波万的关于MVCC的paper..读就完事了
 
 * BitMap
 
-[A very simple BitMap demo based on JDK BitSet](https://github.com/AlexanderChiuluvB/db-learning-material/blob/master/Data-structure/src/main/java/BitMap/BitMap.java)
+  [A very simple BitMap demo based on JDK BitSet](https://github.com/AlexanderChiuluvB/db-learning-material/blob/master/Data-structure/src/main/java/BitMap/BitMap.java)
 
-参考BitSet写的一个很弱智的bitmap
+  参考BitSet写的一个很弱智的bitmap
 
-[BitSet源码解读](https://blog.csdn.net/weixin_38499215/article/details/105996592)
+  [BitSet源码解读](https://blog.csdn.net/weixin_38499215/article/details/105996592)
