@@ -2,7 +2,6 @@
 
 数据库与分布式系统学习资料总结,有缘人进来点个star,祝您一生平安靴靴 Welcome to star! 
 
-
 ## <a name='TOC'>Table of Contents</a>
 
   1. [Course Material](#CourseMaterial)
@@ -19,6 +18,8 @@
 
 [CMU-15-721-Course-website](https://15721.courses.cs.cmu.edu/spring2020/)  Advanced Database Systems(Spring 2020)
 
+这个repo中的CMU-15-721包含了每一个课堂的Slides,我的课堂笔记以及每堂课必读的论文
+
 [MIT.6.824 英字Video](https://www.bilibili.com/video/av91748150) Distributed Systems
 
 ### <a name='Papers'> Papers Reading List
@@ -31,27 +32,35 @@
 
 
 ### <a name='PaperReading'> My paper reading notes
-  
-Title | Paper | Notes | Highlights
--|-|-|-|-
-What's new with NewSQL||[What's new with NewSQL](https://github.com/AlexanderChiuluvB/db-learning-material/tree/master/CMU-15-721/Lec-01-History-Of-Databases)|这篇是15-721第一门课要求读的论文，讲述了New SQL的特性&HTAP是趋势
+ 
+[What's new with NewSQL](https://github.com/AlexanderChiuluvB/db-learning-material/tree/master/CMU-15-721/Lec-01-History-Of-Databases)
+
+这篇是15-721第一门课要求读的论文，讲述了New SQL的特性&HTAP是趋势
+
+原始Paper: [What's new with NewSQL](https://github.com/AlexanderChiuluvB/db-learning-material/blob/master/CMU-15-721/Lec-01-History-Of-Databases/pavlo-newsql-sigmodrec2016.pdf)
 
 [Architecture of a Database System](https://github.com/AlexanderChiuluvB/db-learning-material/blob/master/CMU-15-721/Lec-01-History-Of-Databases/DBArchitectureLearningNotes.md)
 
 数据库入门必备，让你对关系型数据库有一个整体架构的理解。这篇论文PingCAP在B站有导读。
 
+原始Paper：[Architecture of a Database System](https://github.com/AlexanderChiuluvB/db-learning-material/blob/master/CMU-15-721/Lec-01-History-Of-Databases/fntdb07-architecture.pdf)
+
 [An Evaluation of Concurrency Control with One Thousand Cores](https://blog.csdn.net/weixin_38499215/article/details/105883971)
 
 探讨多种并发控制策略在多核CPU下的性能瓶颈
+
+原始Paper：[An Evaluation of Concurrency Control with One Thousand Cores](https://github.com/AlexanderChiuluvB/db-learning-material/blob/master/CMU-15-721/Lec-02-In-Memory-Databases/p209-yu.pdf)
 
 [An Empirical Evaluation of In-Memory MVCC](https://github.com/AlexanderChiuluvB/db-learning-material/blob/master/CMU-15-721/Lec-03-MVCC-design/MVCC-LEC01.pdf)
 
 Andy口中世界上南波万的关于MVCC的paper..读就完事了
 
+原始Paper：[An Empirical Evaluation of In-Memory MVCC](https://github.com/AlexanderChiuluvB/db-learning-material/blob/master/CMU-15-721/Lec-03-MVCC-design/wu-vldb2017.pdf)
+
 
 ### <a name='Code'> Code from scratch
 
-一些数据库与分布式系统领域常见的数据结构,一些太复杂的以阅读别人实现好的轮子代替.
+尝试实现一些数据库与分布式系统领域常见的数据结构,一些太复杂的以阅读别人实现好的轮子代替.
 
 * skipList
 
