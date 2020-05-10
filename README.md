@@ -37,26 +37,25 @@
 
 这篇是15-721第一门课要求读的论文，讲述了New SQL的特性&HTAP是趋势
 
-原始Paper: [What's new with NewSQL](https://github.com/AlexanderChiuluvB/db-learning-material/blob/master/CMU-15-721/Lec-01-History-Of-Databases/pavlo-newsql-sigmodrec2016.pdf)
+[原始Paper](https://github.com/AlexanderChiuluvB/db-learning-material/blob/master/CMU-15-721/Lec-01-History-Of-Databases/pavlo-newsql-sigmodrec2016.pdf)
 
 [Architecture of a Database System](https://github.com/AlexanderChiuluvB/db-learning-material/blob/master/CMU-15-721/Lec-01-History-Of-Databases/DBArchitectureLearningNotes.md)
 
 数据库入门必备，让你对关系型数据库有一个整体架构的理解。这篇论文PingCAP在B站有导读。
 
-原始Paper：[Architecture of a Database System](https://github.com/AlexanderChiuluvB/db-learning-material/blob/master/CMU-15-721/Lec-01-History-Of-Databases/fntdb07-architecture.pdf)
+[原始Paper](https://github.com/AlexanderChiuluvB/db-learning-material/blob/master/CMU-15-721/Lec-01-History-Of-Databases/fntdb07-architecture.pdf)
 
 [An Evaluation of Concurrency Control with One Thousand Cores](https://blog.csdn.net/weixin_38499215/article/details/105883971)
 
 探讨多种并发控制策略在多核CPU下的性能瓶颈
 
-原始Paper：[An Evaluation of Concurrency Control with One Thousand Cores](https://github.com/AlexanderChiuluvB/db-learning-material/blob/master/CMU-15-721/Lec-02-In-Memory-Databases/p209-yu.pdf)
+[原始Paper](https://github.com/AlexanderChiuluvB/db-learning-material/blob/master/CMU-15-721/Lec-02-In-Memory-Databases/p209-yu.pdf)
 
 [An Empirical Evaluation of In-Memory MVCC](https://github.com/AlexanderChiuluvB/db-learning-material/blob/master/CMU-15-721/Lec-03-MVCC-design/MVCC-LEC01.pdf)
 
 Andy口中世界上南波万的关于MVCC的paper..读就完事了
 
-原始Paper：[An Empirical Evaluation of In-Memory MVCC](https://github.com/AlexanderChiuluvB/db-learning-material/blob/master/CMU-15-721/Lec-03-MVCC-design/wu-vldb2017.pdf)
-
+[原始Paper](https://github.com/AlexanderChiuluvB/db-learning-material/blob/master/CMU-15-721/Lec-03-MVCC-design/wu-vldb2017.pdf)
 
 ### <a name='Code'> Code from scratch
 
