@@ -2,34 +2,33 @@
 
 数据库与分布式系统学习资料总结,有缘人进来点个star,祝您一生平安靴靴 Welcome to star! 
 
-### Course Material
+
+## <a name='TOC'>Table of Contents</a>
+
+  1. [Course Material](#CourseMaterial)
+  2. [Papers](#Papers)
+  3. [OpenSource](#OpenSource)
+  4. [PaperReading Notes](#PaperReading)
+  5. [Code](#Code)
+ 
+### <a name='CourseMaterial'> Course Material
 
 [CMU-15-721-英字Video](https://www.bilibili.com/video/BV1Wz411b7sD?from=search&seid=1785395184520069316)
 
 [CMU-15-721-Course-website ](https://15721.courses.cs.cmu.edu/spring2020/)
 
-CMU 15-721，我认为世界上公开的最棒的数据库进阶课程，初中级数据库工程师自嗨必备
-
-
 [MIT.6.824 英字Video](https://www.bilibili.com/video/av91748150)
 
-这我不用说了吧？
-
-
-### Papers
+### <a name='Papers'> Papers
 
 [rxin的数据库经典论文](https://github.com/rxin/db-readings#data-parallel)
 
 [PingCAP的数据库入门总结](https://github.com/pingcap/awesome-database-learning)
 
 
-### OpenSource Project
+### <a name='OpenSource'> OpenSource Project
 
-收集一些超棒的开源分布式&数据库项目
-
-
-
-### My paper reading notes
+### <a name='PaperReading'> My paper reading notes
 
 [What's new with NewSQL](https://github.com/AlexanderChiuluvB/db-learning-material/tree/master/CMU-15-721/Lec-01-History-Of-Databases)
 
@@ -48,7 +47,7 @@ CMU 15-721，我认为世界上公开的最棒的数据库进阶课程，初中�
 Andy口中世界上南波万的关于MVCC的paper..读就完事了
 
 
-### Code from scratch
+### <a name='Code'> Code from scratch
 
 一些数据库与分布式系统领域常见的数据结构,一些太复杂的以阅读别人实现好的轮子代替.
 
