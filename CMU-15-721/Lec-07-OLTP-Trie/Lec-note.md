@@ -108,11 +108,143 @@ MCS spinLock in Linux Kernel这里简单介绍下
 
 就例如insert时候如果结点不是满的，就是安全的。满了的话就会split
 
-或者如果删除操作的时候，节点数量已经超过一半了，那也是安全的。否则如果没有一半的话，
+或者如果删除操作的时候，节点数量已经超过一半了，那也是安全的。否则如果没有一半的话，就会merge到其他结点
+
+
+
+对于**search**操作，从根节点开始往下遍历
+
+1.对子节点获取读latch
+
+2.然后释放父节点的latch
+
+![1589095000302](C:\Users\AlexanderChiu\AppData\Roaming\Typora\typora-user-images\1589095000302.png)
+
+
+
+如下图，一旦获得了C的锁，就可以释放其父节点A的锁
+
+![1589095022662](C:\Users\AlexanderChiu\AppData\Roaming\Typora\typora-user-images\1589095022662.png)
+
+以此类推最后找到F
+
+![1589095049639](C:\Users\AlexanderChiu\AppData\Roaming\Typora\typora-user-images\1589095049639.png)
+
+对于**insert，delete**操作，从根节点往下遍历，然后获取写latch，一旦子节点上锁了，就检查其是否安全。如果子节点安全，释放其所有父节点的latch。
+
+**delete**操作：
+
+![1589095251729](C:\Users\AlexanderChiu\AppData\Roaming\Typora\typora-user-images\1589095251729.png)
 
 
 
 
+
+![1589095265456](C:\Users\AlexanderChiu\AppData\Roaming\Typora\typora-user-images\1589095265456.png)
+
+一直找到44之前A,C都不能解锁，因为不能判断C是否安全，C可能会合并到其他结点
+
+然后判断G结点删除之后是否会与F结点merge，如果不会数目G是安全的，这时候才可以释放其所有父节点上的锁。
+
+![1589095317263](C:\Users\AlexanderChiu\AppData\Roaming\Typora\typora-user-images\1589095317263.png)
+
+
+
+![1589095366635](C:\Users\AlexanderChiu\AppData\Roaming\Typora\typora-user-images\1589095366635.png)
+
+**insert**操作
+
+![1589095511720](C:\Users\AlexanderChiu\AppData\Roaming\Typora\typora-user-images\1589095511720.png)
+
+对于插入操作而言，重要的是判断C结点的子节点分裂的时候，C结点还有没有空间容纳。这里是有的，因此它是安全的，可以释放掉A的锁。
+
+![1589095526024](C:\Users\AlexanderChiu\AppData\Roaming\Typora\typora-user-images\1589095526024.png)
+
+
+
+这时候插入40，G一定要split，G不安全，因此不能释放C的锁
+
+![1589095664506](C:\Users\AlexanderChiu\AppData\Roaming\Typora\typora-user-images\1589095664506.png)
+
+
+
+![1589095742613](C:\Users\AlexanderChiu\AppData\Roaming\Typora\typora-user-images\1589095742613.png)
+
+
+
+
+
+但是上面这种方法效率有点低，因为ancestor node随时要上一个Write Latch,可能会block掉其他的读请求。所以我们可以采取以下方法：
+
+乐观认为子节点是Safe的，上的是读锁，那么一旦子节点安全就可以释放掉父节点的读锁，避免block掉其他请求。如果不安全，就只好按照上面那种思路来，上写锁了。
+
+![1589096034636](C:\Users\AlexanderChiu\AppData\Roaming\Typora\typora-user-images\1589096034636.png)
+
+
+
+还是以delete 44为例子
+
+![1589096123398](C:\Users\AlexanderChiu\AppData\Roaming\Typora\typora-user-images\1589096123398.png)
+
+
+
+![1589096134605](C:\Users\AlexanderChiu\AppData\Roaming\Typora\typora-user-images\1589096134605.png)
+
+因为delete44不会merge掉G，因此可以释放掉C的latch
+
+![1589096158175](C:\Users\AlexanderChiu\AppData\Roaming\Typora\typora-user-images\1589096158175.png)
+
+更好的方法：基于版本号机制：
+
+![1589097625235](C:\Users\AlexanderChiu\AppData\Roaming\Typora\typora-user-images\1589097625235.png)
+
+
+
+注意PPT中的@B应该是@C,@C应该是@G
+
+![1589097708411](C:\Users\AlexanderChiu\AppData\Roaming\Typora\typora-user-images\1589097708411.png)
+
+每读一个Node，都会检查其父节点的版本号是否改变。如果改变了，有可能涉及到结点的split/merge导致结点路径改变。那么走原来的老路径可能就会search不到。
+
+如果在读G结点的时候，有线程修改了C，C的版本号·发生了改变那么G的recheck就会失败，这时候就只能从头开始来了。
+
+![1589097867613](C:\Users\AlexanderChiu\AppData\Roaming\Typora\typora-user-images\1589097867613.png)
+
+
+
+### Trie
+
+![1589098189696](C:\Users\AlexanderChiu\AppData\Roaming\Typora\typora-user-images\1589098189696.png)
+
+B+树的数据都是在叶子节点，内部节点不能告诉你某个key是否存在。为了寻找某个数据，你可能需要从头遍历到叶子节点。那么每一层都其实会对应一个缓存行的失效。
+
+于是我们引入字典树，方便做前缀匹配加速查找。
+
+![1589099151274](C:\Users\AlexanderChiu\AppData\Roaming\Typora\typora-user-images\1589099151274.png)
+
+
+
+那么search操作就没有必要都遍历到叶子节点才能找到某个key是否存在，在字典树中所有操作的时间复杂度为O(length)
+
+![1589099242653](C:\Users\AlexanderChiu\AppData\Roaming\Typora\typora-user-images\1589099242653.png)
+
+![1589099970677](C:\Users\AlexanderChiu\AppData\Roaming\Typora\typora-user-images\1589099970677.png)
+
+一种表示方式如下图所示：
+
+每个结点2项,如果该位是0则第一项指向下一个结点，如果是1就第二项指向下一个结点
+
+![1589100279113](C:\Users\AlexanderChiu\AppData\Roaming\Typora\typora-user-images\1589100279113.png)
+
+
+
+#### Radix Tree
+
+压缩版本的Trie
+
+
+
+![1589100565324](C:\Users\AlexanderChiu\AppData\Roaming\Typora\typora-user-images\1589100565324.png)
 
 
 
