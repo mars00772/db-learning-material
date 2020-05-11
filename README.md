@@ -9,6 +9,7 @@
   3. [OpenSource](#OpenSource)
   4. [PaperReading Notes](#PaperReading)
   5. [Code](#Code)
+  6. [Lecture-Notes](#LectureNotes)
  
 ### <a name='CourseMaterial'> Course Material
   
@@ -94,3 +95,28 @@ Andy口中世界上南波万的关于MVCC的paper..读就完事了
   参考BitSet写的一个很弱智的bitmap
 
   [BitSet源码解读](https://blog.csdn.net/weixin_38499215/article/details/105996592)
+  
+  
+  
+ ### <a name='LectureNotes'> LectureNotes
+  
+ #### CMU 15-721
+ 
+ [Lec-01 History Of DataBases](https://github.com/AlexanderChiuluvB/db-learning-material/tree/master/CMU-15-721/Lec-01-History-Of-Databases)
+ 
+ [Lec-02 In-memory Databases](https://github.com/AlexanderChiuluvB/db-learning-material/tree/master/CMU-15-721/Lec-02-In-Memory-Databases)
+ 
+ [Lec-03 MVCC-design](https://github.com/AlexanderChiuluvB/db-learning-material/blob/master/CMU-15-721/Lec-03-MVCC-design/MVCC-LEC01.pdf)
+ 
+ [Lec-04 MVCC-Protocol](https://github.com/AlexanderChiuluvB/db-learning-material/blob/master/CMU-15-721/Lec-04-MVCC-Protocol/04-mvcc2-notes.pdf)
+ 
+ [Lec-05 MVCC-GC](https://github.com/AlexanderChiuluvB/db-learning-material/tree/master/CMU-15-721/Lec-05-MVCC-GC)
+ 
+ [Lec-06 OLTP-BTree](https://github.com/AlexanderChiuluvB/db-learning-material/blob/master/CMU-15-721/Lec-06-OLTP-BTree/lecture-notes.pdf)
+ 
+ [Lec-07 OLTP-Trie](https://github.com/AlexanderChiuluvB/db-learning-material/blob/master/CMU-15-721/Lec-07-OLTP-Trie/Lec-note.pdf)
+ 
+ [Lec-08 Storage Model](https://github.com/AlexanderChiuluvB/db-learning-material/blob/master/CMU-15-721/Lec-08-Storage-Model/README.pdf)
+ 
+  
+  
