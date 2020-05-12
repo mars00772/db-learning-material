@@ -23,6 +23,9 @@
 
 [MIT.6.824 英字Video](https://www.bilibili.com/video/av91748150) Distributed Systems
 
+[MIT.6.830 Database Systems](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-830-database-systems-fall-2010/index.htm) 接下来的计划应该就是上这门课，写SimpleDB
+
+
 ### <a name='Papers'> Papers Reading List
 
 [rxin的数据库经典论文](https://github.com/rxin/db-readings#data-parallel)
