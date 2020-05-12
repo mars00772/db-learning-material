@@ -82,8 +82,6 @@ Andy口中世界上南波万的关于MVCC的paper..读就完事了
 
 * Red-Black Tree
 
-* Raft
-
 * Bloom Filter
 
 * Roaring BitMap
@@ -117,6 +115,8 @@ Andy口中世界上南波万的关于MVCC的paper..读就完事了
  [Lec-07 OLTP-Trie](https://github.com/AlexanderChiuluvB/db-learning-material/blob/master/CMU-15-721/Lec-07-OLTP-Trie/Lec-note.pdf)
  
  [Lec-08 Storage Model](https://github.com/AlexanderChiuluvB/db-learning-material/blob/master/CMU-15-721/Lec-08-Storage-Model/README.pdf)
+
+ [Lec-09 Data Compression](https://github.com/AlexanderChiuluvB/db-learning-material/blob/master/CMU-15-721/Lec-09-Database-Compression/lec-notes.pdf)
  
   
   
