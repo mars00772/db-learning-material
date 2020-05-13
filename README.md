@@ -65,6 +65,8 @@ Andy口中世界上南波万的关于MVCC的paper..读就完事了
 
 尝试实现一些数据库与分布式系统领域常见的数据结构,一些太复杂的以阅读别人实现好的轮子代替.
 
+#### Index
+
 * skipList
 
   [Simple skipList with Java](https://github.com/AlexanderChiuluvB/db-learning-material/blob/master/Data-structure/src/main/java/skipList/skipList.java)
@@ -77,15 +79,7 @@ Andy口中世界上南波万的关于MVCC的paper..读就完事了
 
 * LSM Tree
 
-* LRU
-
-* LFU
-
-* Hashmap
-
 * Red-Black Tree
-
-* Bloom Filter
 
 * Roaring BitMap
 
@@ -96,8 +90,25 @@ Andy口中世界上南波万的关于MVCC的paper..读就完事了
   参考BitSet写的一个很弱智的bitmap
 
   [BitSet源码解读](https://blog.csdn.net/weixin_38499215/article/details/105996592)
-  
-  
+
+#### Cache
+
+* LRU
+
+* LFU
+
+* Hashmap
+
+* Bloom Filter
+
+#### Lock&Mutex
+
+* FIFO Mutex
+
+[Simple FIFO Mutex based on LockSupport](https://github.com/AlexanderChiuluvB/db-learning-material/blob/master/Data-structure/src/main/java/FIFOMutex/FIFOMutex.java)
+
+* ReadWriteLock
+
   
  ### <a name='LectureNotes'> LectureNotes
   
@@ -121,6 +132,6 @@ Andy口中世界上南波万的关于MVCC的paper..读就完事了
 
  [Lec-09 Data Compression](https://github.com/AlexanderChiuluvB/db-learning-material/blob/master/CMU-15-721/Lec-09-Database-Compression/lec-notes.pdf)
  
-[Lec-10 Recovery Model](https://github.com/AlexanderChiuluvB/db-learning-material/blob/master/CMU-15-721/Lec-10-Recovery-Model/lec-notes.pdf)
+ [Lec-10 Recovery Model](https://github.com/AlexanderChiuluvB/db-learning-material/blob/master/CMU-15-721/Lec-10-Recovery-Model/lec-notes.pdf)
   
   
