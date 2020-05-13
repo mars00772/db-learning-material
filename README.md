@@ -121,5 +121,6 @@ Andy口中世界上南波万的关于MVCC的paper..读就完事了
 
  [Lec-09 Data Compression](https://github.com/AlexanderChiuluvB/db-learning-material/blob/master/CMU-15-721/Lec-09-Database-Compression/lec-notes.pdf)
  
+[Lec-10 Recovery Model](https://github.com/AlexanderChiuluvB/db-learning-material/blob/master/CMU-15-721/Lec-10-Recovery-Model/lec-notes.pdf)
   
   
