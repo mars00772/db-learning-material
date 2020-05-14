@@ -2,8 +2,9 @@
 #include <list>
 #include <string>
 #include <unordered_map>
-//#include <shared_mutex>
-//#include <mutex>
+#include <bits/unique_ptr.h>
+#include <shared_mutex>
+#include <mutex>
 
 class LRU{
 public:
@@ -13,8 +14,8 @@ public:
     }
     ~LRU()= default;
 
-    const std::string get(std::string &key){
-        //std::shared_lock<std::shared_mutex> lock(mutex);//Îö¹¹»á×Ô¶¯½âËø
+    std::string get(std::string &key){
+        std::shared_lock<std::shared_mutex> lock(mutex);//ææ„ä¼šè‡ªåŠ¨è§£é”
         if(!map.count(key)){
             return "";
         }
@@ -23,7 +24,7 @@ public:
     }
 
     void put(const std::string& key, const std::string& value){
-        //std::unique_lock<std::shared_mutex> lock(mutex);
+        std::unique_lock<std::shared_mutex> lock(mutex);
         if(this->capacity==map.size()&&!map.count(key)){
             evict();
         }
@@ -32,7 +33,7 @@ public:
     }
 
     void remove(const std::string& key){
-        //std::unique_lock<std::shared_mutex> lock(mutex);
+        std::unique_lock<std::shared_mutex> lock(mutex);
         if(map.count(key)){
             lru.erase(itermp[key]);
             map.erase(key);
@@ -41,7 +42,7 @@ public:
 
     }
     void printAll(){
-        //std::shared_lock<std::shared_mutex> lock(mutex);//Îö¹¹»á×Ô¶¯½âËø
+        std::shared_lock<std::shared_mutex> lock(mutex);//ææ„ä¼šè‡ªåŠ¨è§£é”
         for(auto iter = map.begin(); iter != map.end(); iter++ ){
             std::cout<< iter->first << " : " << iter->second << std::endl;
         }
@@ -49,7 +50,7 @@ public:
 
 private:
     int capacity;
-    //mutable std::shared_mutex mutex;
+    mutable std::shared_mutex mutex;
     std::list<std::string> lru;
     std::unordered_map<std::string, std::string> map;
     std::unordered_map<std::string, std::list<std::string>::iterator> itermp;
@@ -76,7 +77,7 @@ int main() {
     lru->put("key2", "value2");
     lru->put("key3", "value3");
 
-    //ÌÔÌ­µÄÓ¦¸ÃÊÇkey1
+    //æ·˜æ±°çš„åº”è¯¥æ˜¯key1
     lru->put("key4", "value4");
 
     /** result:
@@ -100,7 +101,7 @@ int main() {
     std::cout<<std::endl;
     lru->put("key4", "newValue4");
 
-    //ÌÔÌ­µÄÓ¦¸ÃÊÇkey2
+    //æ·˜æ±°çš„åº”è¯¥æ˜¯key2
     lru->put("key6", "value6");
 
     /***
@@ -111,4 +112,3 @@ int main() {
     lru->printAll();
 
 }
-
