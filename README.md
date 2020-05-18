@@ -140,3 +140,6 @@ Andy口中世界上南波万的关于MVCC的paper..读就完事了
   
  [Lec-11 Networking Model](https://github.com/AlexanderChiuluvB/db-learning-material/blob/master/CMU-15-721/Lec-11-Networking-Model/lec-note.pdf)
   
+ [Lec-12-Scheduling](https://github.com/AlexanderChiuluvB/db-learning-material/blob/master/CMU-15-721/Lec-12-Scheduling/lec.pdf)
+ 
+ [Lec-13-Query-Execution](https://github.com/AlexanderChiuluvB/db-learning-material/blob/master/CMU-15-721/Lec-13-Query-Execution-And-Processing/QueryOptimization.pdf)
