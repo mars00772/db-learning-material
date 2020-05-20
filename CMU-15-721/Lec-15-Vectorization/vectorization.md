@@ -80,6 +80,34 @@ Perform operation in an elementwise manner on elements of each vector
 
 ![1589880695631](C:\Users\AlexanderChiu\AppData\Roaming\Typora\typora-user-images\1589880695631.png)
 
+### VECTORIZED OPERATORS
+
+* Selection Scans
+
+![1589953372038](C:\Users\AlexanderChiu\AppData\Roaming\Typora\typora-user-images\1589953372038.png)
+
+* Hash Tables
+
+线性探测法解决哈希冲突的性能瓶颈在于:线性探测部分，即冲突之后在哈希表遍历的部分
+
+向量化的线性探测：128-bit的寄存器允许一次性加载四个key/value,分摊掉原来线性探测的开销。
+
+![1589953782003](C:\Users\AlexanderChiu\AppData\Roaming\Typora\typora-user-images\1589953782003.png)
+
+
+
+* Partitioning / Histograms
+
+![1589955272031](C:\Users\AlexanderChiu\AppData\Roaming\Typora\typora-user-images\1589955272031.png)
+
+
+
+对于OLAP数据库来说，向量化执行是其提高性能的关键。
+
+![1589955079949](C:\Users\AlexanderChiu\AppData\Roaming\Typora\typora-user-images\1589955079949.png)
+
+
+
 
 
 
