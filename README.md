@@ -75,6 +75,8 @@ Andy口中世界上南波万的关于MVCC的paper..读就完事了
 
 * Trie Tree
 
+  [Trie with cpp](https://github.com/AlexanderChiuluvB/db-learning-material/blob/master/Data-structure/STL/Trie.h)
+
 * Radix Tree
 
 * B/B+ Tree
