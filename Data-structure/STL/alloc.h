@@ -11,6 +11,9 @@ namespace MYSTL {
 
     class alloc {
     private:
+        /***
+         * 空闲链表有16个桶，每个桶分别维护8,16,24....128bytes的字节块
+         */
         enum {
             ALIGN = 8
         };
@@ -55,7 +58,7 @@ namespace MYSTL {
 
         static void deallocate(void *p, size_t n);
 
-        static void reallocate(void *p, size_t old_size, size_t new_size);
+        static void *reallocate(void *p, size_t old_size, size_t new_size);
     };
 }
 
