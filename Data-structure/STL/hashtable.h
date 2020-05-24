@@ -7,6 +7,7 @@
 
 #include "alloc.h"
 #include "allocator.h"
+#include "iterator.h"
 #include <vector>
 #include "construct.h"
 #include <algorithm>
@@ -54,13 +55,13 @@ namespace MYSTL{
         typedef hashtable_node<Value>   node;
         typedef allocator<node, Alloc>  node_allocator;
         typedef hashtable_iterator<Value, Key, HashFcn, ExtractKey, EqualKey, Alloc> iterator;
+        std::vector<node*, Alloc> buckets;
 
 
     private:
         hasher      hash;
         key_equal   equals;
         ExtractKey  get_key;
-        std::vector<node*, Alloc> buckets;
         size_type            num_elements;
 
 
@@ -122,6 +123,22 @@ namespace MYSTL{
             num_elements = 0;
         }
 
+    public:
+        size_type bkt_num(const value_type& obj, size_t n) const {
+            return bkt_num_key(get_key(obj), n);
+        }
+        size_type bkt_num(const value_type& obj) const {
+            return bkt_num_key(get_key(obj));
+        }
+
+    private:
+        size_type bkt_num_key(const key_type&key) const {
+            return bkt_num_key(key, buckets.size());
+        }
+        size_type bkt_num_key(const key_type&key, size_t n) const {
+            return hash(key) % n;
+        }
+
 
     public:
         hashtable(size_type n, const HashFcn& hf, const EqualKey& eql) :
@@ -135,7 +152,7 @@ namespace MYSTL{
             copy_from(other);
         }
 
-        hashtable&operator=(const hashtable& other){
+        hashtable& operator= (const hashtable& other){
             if(this!=&other){
                 hash = other.hash;
                 get_key = other.get_key;
@@ -150,8 +167,73 @@ namespace MYSTL{
         }
 
 
+    public:
+        size_type size() const {
+            return num_elements;
+        }
+
+        size_type num_buckets() const {
+            return buckets.size();
+        }
+
+        iterator end() {
+            //return iterator(nullptr, this);
+        }
+    };
+
+
+    template <class Value, class Key, class HashFcn, class ExtractKey,
+            class EqualKey, class Alloc = alloc>
+    struct hashtable_iterator {
+        typedef hashtable<Value, Key, HashFcn, ExtractKey, EqualKey, Alloc> hashtable;
+        typedef hashtable_iterator<Value, Key, HashFcn, ExtractKey, EqualKey, Alloc> iterator;
+        typedef hashtable_node<Value>   node;
+        typedef forward_iterator_tag    iterator_category;
+        typedef Value                   value_type;
+        typedef ptrdiff_t               difference_type;
+        typedef size_t                  size_type;
+        typedef Value&                  reference;
+
+        node* cur;
+        hashtable* ht;
+
+        hashtable_iterator(){}
+
+        hashtable_iterator(node* n, hashtable* table):cur(n),ht(table){
+        }
+
+        reference operator* () const {
+            return cur->value;
+        }
+
+        iterator& operator++() {
+            const node* old = cur;
+            cur = cur->next;
+            if (cur == nullptr) {
+                size_type bucket = ht->bkt_num(old->value);
+                while (cur == nullptr && ++bucket < ht->buckets.size())
+                    cur = ht->buckets[bucket];
+            }
+            return *this;
+        }
+        //后置++
+        iterator operator++(int) {
+            iterator t = *this;
+            ++*this;
+            return t;
+        }
+
+        bool operator== (const iterator& other) const {
+            return cur == other.cur;
+        }
+
+        bool operator!= (const iterator& other) const {
+            return cur != other.cur;
+        }
 
     };
+
+
 
 
 }
