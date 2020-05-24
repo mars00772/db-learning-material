@@ -109,14 +109,45 @@ namespace MYSTL{
         }
 
 
+        void clear(){
+            for(size_type i = 0; i < buckets.size(); i++){
+                node* cur = buckets[i];
+                while(cur!= nullptr){
+                    node* next = cur->next;
+                    delete_node(cur);
+                    cur = next;
+                }
+                buckets[i] = nullptr;
+            }
+            num_elements = 0;
+        }
+
+
     public:
         hashtable(size_type n, const HashFcn& hf, const EqualKey& eql) :
                 hash(hf), equals(eql), get_key(ExtractKey()), num_elements(0) {
             initialize_buckets(n);
         }
 
+        //copy constructor
+        hashtable(const hashtable& other):hash(other.hash),equals(other.equals),get_key(other.get_key),
+        num_elements(0){
+            copy_from(other);
+        }
 
+        hashtable&operator=(const hashtable& other){
+            if(this!=&other){
+                hash = other.hash;
+                get_key = other.get_key;
+                equals = other.equals;
+                copy_from(other);
+            }
+            return *this;
+        }
 
+        ~hashtable(){
+            clear();
+        }
 
 
 
