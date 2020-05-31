@@ -104,6 +104,7 @@ public class skipList {
             this.forward = new Node[level];
         }
     }
+
 }
 
 

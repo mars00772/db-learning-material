@@ -108,6 +108,7 @@ public class BitMap {
 
     public static void main(String[] args) {
 
+
         //By default word size is 1.
         BitMap bitMap = new BitMap();
 

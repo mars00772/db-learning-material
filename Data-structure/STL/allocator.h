@@ -10,7 +10,7 @@
 namespace MYSTL{
     template <class T, class Alloc = alloc>
     class allocator {
-
+    public:
         //n表示分配的T的个数
         static T*allocate(size_t n){
             return n==0?0:(T*)Alloc::allocate(n* sizeof(T));

@@ -112,3 +112,7 @@ Perform operation in an elementwise manner on elements of each vector
 
 
 
+
+
+
+
