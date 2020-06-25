@@ -10,6 +10,7 @@
   4. [PaperReading Notes](#PaperReading)
   5. [Code](#Code)
   6. [Lecture-Notes](#LectureNotes)
+  7. [Book-Notes](#Book-Notes)
  
 ### <a name='CourseMaterial'> Course Material
   
@@ -153,3 +154,10 @@ Andy口中世界上南波万的关于MVCC的paper..读就完事了
  [Lec-14-Compilation](https://github.com/AlexanderChiuluvB/db-learning-material/blob/master/CMU-15-721/Lec-14-Query-Compilation/Compilation.pdf)
  
  [Lec-15-Vectorization](https://github.com/AlexanderChiuluvB/db-learning-material/blob/master/CMU-15-721/Lec-15-Vectorization/vectorization.pdf)
+
+### <a name='Book-Notes'> Book-Notes
+  
+ 《数据库系统内幕》阅读笔记
+Database Internals：A deep dive into How Distributed Data Systems Work
+因为我是搞OLAP的，所以会侧重看OLAP的内容
+
