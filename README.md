@@ -62,6 +62,13 @@ Andy口中世界上南波万的关于MVCC的paper..读就完事了
 
 [原始Paper](https://github.com/AlexanderChiuluvB/db-learning-material/blob/master/CMU-15-721/Lec-03-MVCC-design/wu-vldb2017.pdf)
 
+[The Design and Implementation of Modern
+Column-Oriented Database Systems]()
+
+列式数据库的综述论文，87页
+[原始Paper](https://stratos.seas.harvard.edu/files/stratos/files/columnstoresfntdbs.pdf)
+
+
 ### <a name='Code'> Code from scratch
 
 尝试实现一些数据库与分布式系统领域常见的数据结构,一些太复杂的以阅读别人实现好的轮子代替.
