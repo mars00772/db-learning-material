@@ -161,3 +161,4 @@ Andy口中世界上南波万的关于MVCC的paper..读就完事了
 Database Internals：A deep dive into How Distributed Data Systems Work
 因为我是搞OLAP的，所以会侧重看OLAP的内容
 
+[Chapter1](https://github.com/AlexanderChiuluvB/db-learning-material/blob/master/Database-Internals-ReadingNotes/Chapter1/readingnotes.md)
