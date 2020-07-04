@@ -66,6 +66,7 @@ Andy口中世界上南波万的关于MVCC的paper..读就完事了
 Column-Oriented Database Systems]()
 
 列式数据库的综述论文，87页
+
 [原始Paper](https://stratos.seas.harvard.edu/files/stratos/files/columnstoresfntdbs.pdf)
 
 
