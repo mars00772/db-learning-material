@@ -37,6 +37,16 @@
 
 #### LLVM
 
+一些比较好的入门LLVM的中文资源
+
+* [用LLVM开发新语言](https://llvm-tutorial-cn.readthedocs.io/en/latest/index.html)
+
+* [知乎专栏 谁说不能与龙共舞](https://zhuanlan.zhihu.com/p/21889573)
+
+* [llvm入门](https://juejin.im/post/5bfba01df265da614273939a)
+
+* [知乎专栏 llvm概述](https://zhuanlan.zhihu.com/p/102250532)
+
 
 #### SIMD
 
