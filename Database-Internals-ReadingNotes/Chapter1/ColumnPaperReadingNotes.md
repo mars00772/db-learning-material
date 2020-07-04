@@ -211,8 +211,6 @@ ref <https://www.cnblogs.com/lbser/p/3322630.html>
 
 ![1593839407346](C:\Users\AlexanderChiu\AppData\Roaming\Typora\typora-user-images\1593839407346.png)
 
-### DB cracking
-
 
 ### ref
 
