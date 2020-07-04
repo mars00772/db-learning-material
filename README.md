@@ -6,7 +6,7 @@
 
   1. [Course Material](#CourseMaterial)
   2. [Papers](#Papers)
-  3. [OpenSource](#OpenSource)
+  3. [Other Topics](#其他主题)
   4. [PaperReading Notes](#PaperReading)
   5. [Code](#Code)
   6. [Lecture-Notes](#LectureNotes)
@@ -33,7 +33,12 @@
 
 [PingCAP的数据库入门总结](https://github.com/pingcap/awesome-database-learning)
 
-### <a name='OpenSource'> OpenSource Project
+### <a name='Other Topics'> 其他主题
+
+#### LLVM
+
+
+#### SIMD
 
 
 ### <a name='PaperReading'> My paper reading notes
@@ -170,3 +175,7 @@ Database Internals：A deep dive into How Distributed Data Systems Work
 因为我是搞OLAP的，所以会侧重看OLAP的内容
 
 [Chapter1](https://github.com/AlexanderChiuluvB/db-learning-material/blob/master/Database-Internals-ReadingNotes/Chapter1/readingnotes.md)
+
+[Chapter7] LSM树 + Clickhouse中的 MergeTree学习 tbc
+
+
