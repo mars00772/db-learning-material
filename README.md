@@ -63,7 +63,7 @@ Andy口中世界上南波万的关于MVCC的paper..读就完事了
 [原始Paper](https://github.com/AlexanderChiuluvB/db-learning-material/blob/master/CMU-15-721/Lec-03-MVCC-design/wu-vldb2017.pdf)
 
 [The Design and Implementation of Modern
-Column-Oriented Database Systems]()
+Column-Oriented Database Systems](https://github.com/AlexanderChiuluvB/db-learning-material/blob/master/Database-Internals-ReadingNotes/Chapter1/ColumnPaperReadingNotes.pdf)
 
 列式数据库的综述论文，87页
 
