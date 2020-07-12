@@ -102,7 +102,6 @@ DBMS不能在查询中重复使用结果。
 **动态优化**
 
 主要在流式数据的时候使用
-查询执行时，即时选择运营商计划。
 将重新优化多次执行。
 难以实现/调试（非确定性）
 
@@ -111,10 +110,45 @@ DBMS不能在查询中重复使用结果。
 使用静态算法编译。
 如果估计>阈值的误差，则重新优化。
 
-
 ### 准备好的声明
 
+![1590828472938](C:\Users\AlexanderChiu\AppData\Roaming\Typora\typora-user-images\1590828472938.png)
+
+假设有这么一条SQL
+
+![1590828495280](C:\Users\AlexanderChiu\AppData\Roaming\Typora\typora-user-images\1590828495280.png)
+
+可以把这个SQL转化为prepared statements,其中A,B,C的val参数可能会改变
+
+![1590828545486](C:\Users\AlexanderChiu\AppData\Roaming\Typora\typora-user-images\1590828545486.png)
+
+
+
+那么怎么去决定这个prepared statements的执行计划？
+
+![1590828724032](C:\Users\AlexanderChiu\AppData\Roaming\Typora\typora-user-images\1590828724032.png)
+
+
+
+
+
+
+
 ### 计划稳定性
+
+**提示**
+
+运行数据库系统管理员帮助优化器进行决策，比如，我希望用hash表进行JOIN等
+mysql、sqlserver似乎都支持这种方法
+
+**固定优化器版本**
+
+设置优化器版本号并将查询逐个迁移到新优化器。比如，虽然用了新版本的数据库，但是对于某种特定的查询，我们发现了旧版本的优化器似乎更快，则可以将版本调回去。
+
+**向后兼容的计划**
+
+从旧版本保存备份查询计划，并将其提供给新的DBMS。
+
 
 ### 搜索停止
 
