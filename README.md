@@ -177,15 +177,20 @@ Column-Oriented Database Systems](https://github.com/AlexanderChiuluvB/db-learni
  [Lec-14-Compilation](https://github.com/AlexanderChiuluvB/db-learning-material/blob/master/CMU-15-721/Lec-14-Query-Compilation/Compilation.pdf)
  
  [Lec-15-Vectorization](https://github.com/AlexanderChiuluvB/db-learning-material/blob/master/CMU-15-721/Lec-15-Vectorization/vectorization.pdf)
+ 
+ [lec-19-Query-Optimization](https://github.com/AlexanderChiuluvB/db-learning-material/tree/master/CMU-15-721/Lec-19-QueryOptimization)
+ 
 
 ### <a name='Book-Notes'> Book-Notes
   
  《数据库系统内幕》阅读笔记
 Database Internals：A deep dive into How Distributed Data Systems Work
+
 因为我是搞OLAP的，所以会侧重看OLAP的内容
 
-[Chapter1](https://github.com/AlexanderChiuluvB/db-learning-material/blob/master/Database-Internals-ReadingNotes/Chapter1/readingnotes.md)
+[Chapter1 导论](https://github.com/AlexanderChiuluvB/db-learning-material/blob/master/Database-Internals-ReadingNotes/Chapter1/readingnotes.md)
 
-[Chapter7] LSM树 + Clickhouse中的 MergeTree学习 tbc
+[Chapter7 日志存储结构](https://github.com/AlexanderChiuluvB/db-learning-material/blob/master/Database-Internals-ReadingNotes/Chapter7/READMD.md)
+
 
 
