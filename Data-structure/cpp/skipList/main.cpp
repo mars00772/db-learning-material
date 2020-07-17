@@ -1,96 +1,48 @@
-#include<iostream>
+#include <iostream>
+#include "Node.h"
+#include "skipList.h"
 using namespace std;
 
-class Shape
-{
-protected:
-    string name;
-    double area;
-    double perimeter;
-public:
-    Shape();
-    Shape(string name_, double area_, double perimeter_){
-        this->name = name_;
-        this->area = area_;
-        this->perimeter = perimeter_;
-    }
-    virtual float printArea() const {return 0.0;};
-    virtual void setArea(double area_);
-    virtual double getArea();
+int main() {
 
-};
+    skipList<int, int> sl;
+    int length = 10;
 
-
-class Circle:public Shape
-{
-public:
-    Circle(float =0);
-    virtual float printArea() const {return 3.14159*radius*radius;}
-    virtual void setArea(double area_){
-        this->area = area_;
-    }
-    virtual double getArea(){
-
-    }
-protected:
-    float radius;
-};
-
-//constructor
-Circle::Circle(float r):radius(r)
-{
-}
-
-class Triangle:public Shape
-{
-public:
-    Triangle(float =0,float =0);
-    virtual float printArea() const;
-    virtual void setArea(double area_){
-        this->area = area_;
-    }
-    //功能5
-    friend bool operator == (const Triangle&t1, const Triangle&t2){
-        if(t1.name!=t2.name||t1.area!=t2.area||t1.perimeter!=t2.perimeter||
-                t1.height!=t2.height||t1.width!=t2.width){
-            return false;
-        }
-        return true;
-    }
-protected:
-    float height;
-    float width;
-};
-
-
-Triangle::Triangle(float w,float h):width(w),height(h){
-}
-
-float Triangle::printArea()const
-{
-    return 0.5*width*height;
-}
-
-//功能4
-void printArea(const Shape&s)
-{
-    cout<<s.printArea()<<endl;
-}
-
-//功能2&4
-void modifyArea(Shape &s, double area){
-    s.setArea(area);
-}
-
-
-int main()
-{
-    Circle circle = new Circle();
-    Triangle triangle = new Triangle();
-    Shape *p[2] = {&circle, &triangle};
-    for(int i=0;i<2;i++){
-
-        cout<<p[i]->printArea();
+    for (int i = 1; i <= length; ++i) {
+        sl.insert(i, i + 200);
     }
 
+    cout << "The number of elements in skiplist is:" << sl.size() << endl;
+
+    if (sl.size() != length) {
+        cout << "insert failur." << endl;
+    } else {
+        cout << "insert success." << endl;
+    }
+
+    //测试查找
+    int value = -1;
+    int key = 9;
+    Node<int, int> *searchResult = sl.find(key);
+    if (searchResult != nullptr) {
+        value = searchResult->getValue();
+        cout << "search result for key " << key << ":" << value << endl;
+    } else {
+        cout << "search failure for key " << key << endl;
+    }
+
+
+    value = -1;
+
+    //测试移除,测试不通过
+    key = 6;
+    cout<<endl<<"start to remove"<<endl;
+    bool removeResult = sl.remove(key, value);
+    if (removeResult) {
+        cout << "removed node whose key is " << key << " and value is " << value << endl;
+    } else {
+        cout << "removed failure" << endl;
+    }
+
+    return 0;
 }
