@@ -84,6 +84,11 @@ Column-Oriented Database Systems](https://github.com/AlexanderChiuluvB/db-learni
 
 [原始Paper](https://stratos.seas.harvard.edu/files/stratos/files/columnstoresfntdbs.pdf)
 
+[Vectorization vs. Compilation in Query Execution 原始paper](https://15721.courses.cs.cmu.edu/spring2019/papers/21-vectorization2/p5-sompolski.pdf)
+
+向量化执行引擎和编译执行引擎的简单介绍 [阅读笔记](https://github.com/AlexanderChiuluvB/db-learning-material/blob/master/CMU-15-721/Lec-16-Vectorization%26Compilation/Vectorization%20vs.%20Compilation%20in%20Query%20Execution%20%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0.pdf)
+
+
 
 ### <a name='Code'> Code from scratch
 
