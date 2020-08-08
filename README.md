@@ -51,6 +51,11 @@
 #### SIMD
 
 
+#### 容灾相关
+
+
+
+
 ### <a name='PaperReading'> My paper reading notes
  
 [What's new with NewSQL](https://github.com/AlexanderChiuluvB/db-learning-material/tree/master/CMU-15-721/Lec-01-History-Of-Databases)
